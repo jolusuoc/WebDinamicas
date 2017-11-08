@@ -1,0 +1,19 @@
+<div style="border: 4px dashed red">
+  <ng-content></ng-content>
+  <h1>{{parentName}}</h1>
+  <h2 class="backSalmon">
+    parent works! Indeed this is title from appComponent: {{titleIn}}
+  </h2>
+
+  <app-child
+    [childIn]="titleIn"
+    (eventOutput)="eventFromChildHandler($event)"
+    (onSelectPlayer)="eventSelectHandler($event)"
+  ></app-child>
+</div>
+<div style="background-color: gray; color: white">
+  <h1>Hello my name is {{playerInParent.name}} </h1>
+  <h2>
+      I'm from {{playerInParent.country}}
+  </h2>
+</div>
